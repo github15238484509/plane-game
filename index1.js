@@ -63,6 +63,9 @@ function dianji() {
         if (key) {
             count++;
             fen -= 0.5;
+            if (fen < 0) {
+                fen = 0
+            }
             p.innerHTML = "你走了" + count + "步";
             if (e.target.classList.contains("white")) {
                 e.target.classList.remove("white")
@@ -91,7 +94,6 @@ function dianji() {
 }
 
 function si() {
-
     alert("你的分数为" + fen);
     p.innerHTML = "你走了" + count + "步";
     key = false;
