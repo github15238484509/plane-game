@@ -78,22 +78,28 @@ function dianji() {
             if (ai.length < 6 && key) {
                 for (var ll = 0; ll < ai.length; ll++) {
                     ai[ll].setAttribute("class", "white red");
+
                 }
                 //给出分数
-                setTimeout(() => {
-                    alert("你的分数为" + fen);
-                    p.innerHTML = "你走了" + count + "步";
-                    key = false;
-                    alert("点击下面的按钮重新开始");
-                    //重新添加事件，把上一个事件覆盖掉
-
-                    ul.onclick = overgo;
-                }, 0.2);
+                setTimeout(function() {
+                    si()
+                }, 0)
 
             }
         }
     };
 }
+
+function si() {
+
+    alert("你的分数为" + fen);
+    p.innerHTML = "你走了" + count + "步";
+    key = false;
+    alert("点击下面的按钮重新开始");
+    //重新添加事件，把上一个事件覆盖掉
+    ul.onclick = overgo;
+};
+
 // 游戏结束还要死活不听 还要点 就执行他
 function overgo() {
     alert("疼，别点了")
